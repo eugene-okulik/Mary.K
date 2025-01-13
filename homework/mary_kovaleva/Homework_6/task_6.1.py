@@ -7,5 +7,5 @@ for word in words:
         word = word[:-1] + 'ing' + word[-1]
         text2.append(word)
     else:
-        text2.append(word+'ing')
+        text2.append(word + 'ing')
 print(" ".join(text2))
