@@ -12,7 +12,7 @@ cursor = db.cursor(dictionary=True)
 
 cursor.execute("INSERT INTO students (name, second_name) VALUES ('Will', 'Graham')")
 student_id = cursor.lastrowid
-cursor.execute(f"SELECT * FROM students WHERE name = 'Will' AND second_name = 'Graham'")
+cursor.execute("SELECT * FROM students WHERE name = 'Will' AND second_name = 'Graham'")
 print(cursor.fetchone())
 
 insert_query = "INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)"
@@ -68,4 +68,6 @@ WHERE students.name = 'Will' AND second_name = 'Graham'
 ''')
 print(cursor.fetchall())
 
+db.commit()
+cursor.close()
 db.close()
