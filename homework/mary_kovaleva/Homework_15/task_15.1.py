@@ -51,7 +51,7 @@ cursor.execute(f"SELECT * FROM marks WHERE student_id = {student_id}")
 print(cursor.fetchall())
 
 query = cursor.execute('''
-SELECT students.name, students.second_name, b.title AS books, g.title AS group_name, 
+SELECT students.name, students.second_name, b.title AS books, g.title AS group_name,
 s.title AS subjects, l.title AS lessons, m.value AS marks
 FROM students
 INNER JOIN books b
@@ -59,7 +59,7 @@ ON students.id=b.taken_by_student_id
 INNER JOIN `groups` g
 ON students.group_id = g.id
 INNER JOIN marks m
-ON students.id = m.student_id 
+ON students.id = m.student_id
 INNER JOIN lessons l
 ON m.lesson_id = l.id
 INNER JOIN subjets s
