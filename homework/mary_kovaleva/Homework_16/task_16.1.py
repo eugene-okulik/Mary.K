@@ -34,8 +34,8 @@ INNER JOIN lessons l
 ON m.lesson_id = l.id
 INNER JOIN subjets subj
 ON l.subject_id = subj.id
-WHERE st.name = %s AND st.second_name = %s 
-AND g.title = %s AND b.title = %s 
+WHERE st.name = %s AND st.second_name = %s
+AND g.title = %s AND b.title = %s
 AND subj.title = %s AND l.title = %s AND m.value = %s
 '''
 
